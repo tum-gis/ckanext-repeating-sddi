@@ -1,6 +1,8 @@
 ckanext-repeating
 =================
 
+This CKAN extension is intended to be used in combination with the [SDDI CKAN Docker container](https://github.com/tum-gis/SDDI-CKAN-Docker)
+
 This extension provides a way to store repeating
 fields in CKAN datasets, resources, organizations and groups.
 
@@ -54,3 +56,16 @@ and are updated as items in a list, eg.:
   ],
   "...": "..."
 }
+
+## Installation
+
+Install the extension in your python environment
+```
+$ . /usr/lib/ckan/default/bin/activate
+(pyenv) $ cd /usr/lib/ckan/default/src
+(pyenv) $ pip install -e "git+https://tum-gis/ckanext-repeating-sddi.git#egg=ckanext-repeating-sddi"
+```
+Then change your CKAN ini file (e.g. development.ini or production.ini).
+```
+ckan.plugins = stats text_view recline_view ... repeating
+```
